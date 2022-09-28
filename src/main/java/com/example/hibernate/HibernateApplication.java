@@ -8,6 +8,7 @@ import org.hibernate.cfg.Configuration;
 import org.springframework.boot.ApplicationRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.context.annotation.Bean;
 
 import java.util.Properties;
 
@@ -19,12 +20,11 @@ public class HibernateApplication {
 
 
     }
-
+@Bean
     public ApplicationRunner dataLoader(EmployeeRepository employeeRepository) {
 
         return args -> {
             Employee employee = new Employee();
-            employee.setId(1);
             employee.setName("Sergey");
             employee.setSurname("Bukhtiyarov");
             employee.setDepartment("IT");
