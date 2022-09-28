@@ -39,9 +39,12 @@ public class HibernateApplication {
             employee3.setSurname("Bukhtiyarov");
             employee3.setDepartment("Sales");
             employee3.setSalary(4500);
+
             employeeRepository.save(employee1);
             employeeRepository.save(employee2);
             employeeRepository.save(employee3);
+            employeeRepository.findByDepartment("IT").setDepartment("InformationTechnology");
+
             System.out.println(employeeRepository.findById(2L));
             System.out.println(employeeRepository.findByDepartment("IT"));
 
