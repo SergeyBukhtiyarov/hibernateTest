@@ -42,6 +42,8 @@ public class HibernateApplication {
             employeeRepository.save(employee1);
             employeeRepository.save(employee2);
             employeeRepository.save(employee3);
+            System.out.println(employeeRepository.findById(2L));
+            System.out.println(employeeRepository.findByDepartment("IT"));
 
 
         };

@@ -8,9 +8,9 @@ public class EmployeeService {
     @Autowired
     EmployeeRepository employeeRepository;
 
-    public void save (Employee employee) {
+    public void save(Employee employee) {
         Employee employeeFromDB = employeeRepository.findById(employee.getId());
-        if (employeeFromDB==null){
+        if (employeeFromDB == null) {
             employeeRepository.save(employee);
         }
     }
