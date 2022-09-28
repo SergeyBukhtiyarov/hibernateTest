@@ -20,7 +20,21 @@ public class CrudEmployeeTests {
         employee1.setDepartment("IT");
         employee1.setSalary(5000);
         //сохраняем нового работника в базу (ему присваивается айди 1 автоматически)
+        Employee employee2 = new Employee();
+        employee2.setName("Mary");
+        employee2.setSurname("Strizhneva");
+        employee2.setDepartment("HR");
+        employee2.setSalary(4000);
+
+        Employee employee3 = new Employee();
+        employee3.setName("ALex");
+        employee3.setSurname("Bukhtiyarov");
+        employee3.setDepartment("Sales");
+        employee3.setSalary(4500);
+
         repository.save(employee1);
+        repository.save(employee2);
+        repository.save(employee3);
 
         //обращаемся к базе и достаем оттуда работника по департаменту (сохраненного строчкой выше)
         //Записываем этого работника в переменную empFromDbWithOldDepartment
@@ -43,6 +57,12 @@ public class CrudEmployeeTests {
         System.out.println(employeeFromDbWithNewDepartment);
 
 
+
+    }
+    @Test
+    public  void deleteById (long id) {
+        //удаляем работника с id=2
+        repository.deleteById(2);
     }
 
 }
