@@ -24,12 +24,24 @@ public class HibernateApplication {
     public ApplicationRunner dataLoader(EmployeeRepository employeeRepository) {
 
         return args -> {
-            Employee employee = new Employee();
-            employee.setName("Sergey");
-            employee.setSurname("Bukhtiyarov");
-            employee.setDepartment("IT");
-            employee.setSalary(5000);
-            employeeRepository.save(employee);
+            Employee employee1 = new Employee();
+            employee1.setName("Sergey");
+            employee1.setSurname("Bukhtiyarov");
+            employee1.setDepartment("IT");
+            employee1.setSalary(5000);
+            Employee employee2 = new Employee();
+            employee2.setName("Mary");
+            employee2.setSurname("Strizhneva");
+            employee2.setDepartment("HR");
+            employee2.setSalary(4000);
+            Employee employee3 = new Employee();
+            employee3.setName("Alex");
+            employee3.setSurname("Bukhtiyarov");
+            employee3.setDepartment("Sales");
+            employee3.setSalary(4500);
+            employeeRepository.save(employee1);
+            employeeRepository.save(employee2);
+            employeeRepository.save(employee3);
 
 
         };
